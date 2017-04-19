@@ -1,0 +1,43 @@
+{
+    "name": "hello_world",
+    "version": "0.0.1",
+    "description": "c cpp",
+    "keywords": [
+        ""
+    ],
+    "homepage": "http://JSLite.io",
+    "author": "yanzixian <yanzixian@yunniao.me>",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "licenses": "MIT",
+    "idoc": {
+        "theme": "doc",
+        "md": [
+            "index.md",
+            {
+                "bcjc_notes": [
+                    "412数据宽度.md",
+                    "413位运算.md",
+                    "414寄存器.md",
+                    "417内存.md",
+                    "418.md",
+                    "419.md"
+                ]
+            },
+            {
+                "practice": [
+                    "412进制005.md",
+                    "413进制考试.md",
+                    "414汇编001.md"
+                ]
+            },
+            {
+                "be careful": [
+                    "错题.md"
+                ]
+            }
+        ]
+    }
+}

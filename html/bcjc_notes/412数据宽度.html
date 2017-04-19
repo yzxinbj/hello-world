@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>hello_world</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                hello_world
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../../index.html">index</a></li><li><a href="#"><span></span>bcjc_notes</a><ul><li class="active"><a href="../../html/bcjc_notes/412数据宽度.html">412数据宽度</a></li><li><a href="../../html/bcjc_notes/413位运算.html">413位运算</a></li><li><a href="../../html/bcjc_notes/414寄存器.html">414寄存器</a></li><li><a href="../../html/bcjc_notes/417内存.html">417内存</a></li><li><a href="../../html/bcjc_notes/418.html">418</a></li><li><a href="../../html/bcjc_notes/419.html">419</a></li></ul></li><li><a href="#"><span></span>practice</a><ul><li><a href="../../html/practice/412进制005.html">412进制005</a></li><li><a href="../../html/practice/413进制考试.html">413进制考试</a></li><li><a href="../../html/practice/414汇编001.html">414汇编001</a></li></ul></li><li><a href="#"><span></span>be careful</a><ul><li><a href="../../html/be careful/错题.html">错题</a></li></ul></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul><li><a href="#t0数据宽度">数据宽度</a></li><li><a href="#t1高位丢弃">高位丢弃</a></li><li><a href="#t2无符号数和有符号数">无符号数和有符号数</a></li><li><a href="#t3原码反码补码">原码反码补码</a></li><li><a href="#t4小结">小结</a></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h1 id="t0&#x6570;&#x636E;&#x5BBD;&#x5EA6;">&#x6570;&#x636E;&#x5BBD;&#x5EA6; <a href="#t0&#x6570;&#x636E;&#x5BBD;&#x5EA6;"> # </a></h1>
+<ul>
+<li>&#x4F4D;&#xFF08;bit&#xFF09;1</li>
+<li>&#x5B57;&#x8282;&#xFF08;byte&#xFF09;8</li>
+<li>&#x5B57;&#xFF08;word&#xFF09;16</li>
+<li>&#x53CC;&#x5B57;&#xFF08;Doubleword&#xFF09;32</li>
+</ul>
+<h1 id="t1&#x9AD8;&#x4F4D;&#x4E22;&#x5F03;">&#x9AD8;&#x4F4D;&#x4E22;&#x5F03; <a href="#t1&#x9AD8;&#x4F4D;&#x4E22;&#x5F03;"> # </a></h1>
+<p>&#x53EF;&#x5728;c&#x4E2D;&#x5B9E;&#x9A8C;char x = 0x1FF;&#x5B9E;&#x9645;&#x53EA;&#x5B58;&#x4E86;FF</p>
+<h1 id="t2&#x65E0;&#x7B26;&#x53F7;&#x6570;&#x548C;&#x6709;&#x7B26;&#x53F7;&#x6570;">&#x65E0;&#x7B26;&#x53F7;&#x6570;&#x548C;&#x6709;&#x7B26;&#x53F7;&#x6570; <a href="#t2&#x65E0;&#x7B26;&#x53F7;&#x6570;&#x548C;&#x6709;&#x7B26;&#x53F7;&#x6570;"> # </a></h1>
+<p>&#x8FD9;&#x4E2A;&#x770B;&#x58F0;&#x660E;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5C31;&#x662F;&#x770B;&#x4F60;&#x662F;&#x600E;&#x4E48;&#x89C4;&#x5B9A;&#x7684;
+&#x5982;&#x679C;&#x4F60;&#x58F0;&#x660E;&#x5F53;&#x524D;&#x6570;&#x5B57;&#x662F;&#x6709;&#x7B26;&#x53F7;&#x6570;&#xFF0C;&#x5219;&#x9996;&#x4F4D;&#x662F;&#x7B26;&#x53F7;&#x4F4D;&#xFF0C;&#x4E3A;1&#x65F6;&#x5219;&#x4E3A;&#x8D1F;&#x6570;&#xFF0C;&#x53CD;&#x4E4B;&#x4E3A;&#x6B63;&#x6570;
+&#x5982;&#x679C;&#x5F53;&#x524D;&#x6570;&#x5B57;&#x6309;&#x7167;&#x65E0;&#x7B26;&#x53F7;&#x6570;&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x8BFB;&#x53D6;&#x5373;&#x53EF;&#xFF0C;&#x65E0;&#x7B26;&#x53F7;&#x4F4D;</p>
+<h1 id="t3&#x539F;&#x7801;&#x53CD;&#x7801;&#x8865;&#x7801;">&#x539F;&#x7801;&#x53CD;&#x7801;&#x8865;&#x7801; <a href="#t3&#x539F;&#x7801;&#x53CD;&#x7801;&#x8865;&#x7801;"> # </a></h1>
+<p>&#x6570;&#x7684;&#x539F;&#x7801;&#x5373;&#x6B64;&#x6570;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#xFF0C;&#x53CD;&#x7801;&#x5373;&#x53D6;&#x53CD;&#x540E;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#xFF0C;&#x8865;&#x7801;&#x5373;&#x53CD;&#x7801;&#x52A0;&#x4E00;&#x540E;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6570;</p>
+<p>&#x6B63;&#x6570;&#x7684;&#x539F;&#x7801;&#x53CD;&#x7801;&#x8865;&#x7801;&#x90FD;&#x4E00;&#x6837;&#xFF0C;&#x662F;&#x5B83;&#x81EA;&#x5DF1;<br>&#x8D1F;&#x6570;&#x6309;&#x4E0A;&#x9762;&#x7684;&#x89C4;&#x5219;</p>
+<h1 id="t4&#x5C0F;&#x7ED3;">&#x5C0F;&#x7ED3; <a href="#t4&#x5C0F;&#x7ED3;"> # </a></h1>
+<p>&#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#x5B58;&#x50A8;&#x6570;&#x636E;&#xFF0C;&#x5747;&#x6309;&#x7167;&#x8865;&#x7801;&#x5F62;&#x5F0F;&#x5B58;&#xFF0C;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x8FD0;&#x7B97;<br>&#x5B58;&#x50A8;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x786E;&#x5B9A;&#x6570;&#x636E;&#x5BBD;&#x5EA6;&#xFF0C;&#x5373;&#x4F60;&#x4E3A;&#x4ED6;&#x5206;&#x914D;&#x591A;&#x5C11;&#x4F4D;&#x7F6E;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x628A;&#x6570;&#x636E;&#x5B58;&#x8FDB;&#x53BB;&#xFF0C;&#x5E76;&#x4E14;&#x9AD8;&#x4F4D;&#x820D;&#x5F03;&#xFF0C;&#x4E0D;&#x591F;&#x8865;0<br>&#x5B58;&#x50A8;&#x6570;&#x636E;&#x65F6;&#x662F;&#x4E0D;&#x5206;&#x6709;&#x65E0;&#x7B26;&#x53F7;&#x7684;&#xFF0C;&#x5747;&#x6309;&#x7167;&#x8865;&#x7801;&#x5B58;&#x50A8;&#xFF0C;&#x8BFB;&#x6570;&#x636E;&#x65F6;&#x624D;&#x5206;&#x662F;&#x5426;&#x6709;&#x7B26;&#x53F7;</p>
+
+    </div>
+
+</div>
+
+
+</body>
+<script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+<script>
+    $('.page-toc li').eq(0).children('a').addClass('red');
+    var arr = [];
+    $("h2,h3").each(function () {
+        $(this).attr('t',$(this).position().top);
+        arr.push($(this).position().top);
+    });
+    $(window).on('scroll', function () {
+        var cur = $(document).scrollTop();
+        for(var i = arr.length; i >=0;i--){
+            if(arr[i]<=cur){
+                break;
+            }
+        }
+        if(i===-1){
+            i = 0;
+        }
+        $('.page-toc li a').removeClass('red');
+        $('.page-toc li').eq(i).children('a').addClass('red')
+    });
+</script>
+</html>

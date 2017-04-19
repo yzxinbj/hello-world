@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>hello_world</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                hello_world
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../../index.html">index</a></li><li><a href="#"><span></span>bcjc_notes</a><ul><li><a href="../../html/bcjc_notes/412数据宽度.html">412数据宽度</a></li><li><a href="../../html/bcjc_notes/413位运算.html">413位运算</a></li><li><a href="../../html/bcjc_notes/414寄存器.html">414寄存器</a></li><li><a href="../../html/bcjc_notes/417内存.html">417内存</a></li><li><a href="../../html/bcjc_notes/418.html">418</a></li><li><a href="../../html/bcjc_notes/419.html">419</a></li></ul></li><li><a href="#"><span></span>practice</a><ul><li class="active"><a href="../../html/practice/412进制005.html">412进制005</a></li><li><a href="../../html/practice/413进制考试.html">413进制考试</a></li><li><a href="../../html/practice/414汇编001.html">414汇编001</a></li></ul></li><li><a href="#"><span></span>be careful</a><ul><li><a href="../../html/be careful/错题.html">错题</a></li></ul></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul><li><a href="#t0进制005">进制005</a></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h1 id="t0&#x8FDB;&#x5236;005">&#x8FDB;&#x5236;005 <a href="#t0&#x8FDB;&#x5236;005"> # </a></h1>
+<07 计算机不会做加法="">  
+
+<p>1&#x3001;&#x5982;&#x4F55;&#x901A;&#x8FC7;&#x4F4D;&#x8FD0;&#x7B97;&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x6570;&#x662F;&#x5947;&#x6570;&#x8FD8;&#x662F;&#x5076;&#x6570;&#xFF1F;<br>&#x7B54;&#xFF1A;&#x548C;0x00000001&#x8FDB;&#x884C;&#x4E0E;&#x8FD0;&#x7B97;&#xFF0C;&#x7ED3;&#x679C;&#x4E3A;0&#x662F;&#x5076;&#x6570;&#xFF0C;&#x7ED3;&#x679C;&#x4E3A;1&#x662F;&#x57FA;&#x6570;</p>
+<p>2&#x3001;&#x5982;&#x4F55;&#x8BFB;&#x53D6;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x4E2D;&#x7684;&#x67D0;&#x4E00;&#x4F4D;&#x7684;&#x503C;?<br>&#x8BBE;&#x67D0;&#x4E00;&#x4E3A;&#x4E3A;x&#x4F4D;&#xFF0C;&#x4E14;&#x6CA1;&#x6709;&#x7B2C;0&#x4F4D;<br>&#x7B54;&#xFF1A;&#x628A;0x00000001&#x5DE6;&#x79FB;x-1&#x4F4D;&#xFF0C;&#x518D;&#x8FDB;&#x884C;&#x4E0E;&#x8FD0;&#x7B97;&#xFF0C;&#x518D;&#x53F3;&#x79FB;x-1&#x4F4D;&#xFF0C;&#x7ED3;&#x679C;&#x5C31;&#x662F;&#x7B2C;x&#x4F4D;&#x7684;&#x503C;</p>
+<p>3&#x3001;&#x5982;&#x4F55;&#x8BBE;&#x7F6E;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x4E2D;&#x7684;&#x67D0;&#x4E00;&#x4F4D;&#x7684;&#x503C;?<br>&#x8BBE;&#x67D0;&#x4E00;&#x4E3A;&#x4E3A;x&#x4F4D;&#xFF0C;&#x4E14;&#x6CA1;&#x6709;&#x7B2C;0&#x4F4D;<br>&#x7B54;&#xFF1A;&#x8BBE;&#x4E3A;1&#xFF1A;&#x628A;0x00000001&#x5DE6;&#x79FB;x-1&#x4F4D;&#xFF0C;&#x518D;&#x8FDB;&#x884C;&#x6216;&#x8FD0;&#x7B97;<br>    &#x8BBE;&#x4E3A;0&#xFF1A;&#x7B2C;2&#x9898;&#x53EF;&#x4EE5;&#x53D6;&#x5230;&#x7B2C;x&#x4F4D;&#x7684;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x628A;0x0000000x&#x5DE6;&#x79FB;x-1&#x4F4D;&#xFF0C;&#x518D;&#x8FDB;&#x884C;&#x5F02;&#x6216;&#x8FD0;&#x7B97;&#x5F97;&#x5230;a&#xFF0C;a&#x518D;&#x4E0E;0x00000000&#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x5F02;&#x6216;&#x8FD0;&#x7B97;&#xFF0C;&#x8BBE;&#x7F6E;&#x5B8C;&#x6BD5;
+4&#x3001;2*8&#x7684;&#x6700;&#x9AD8;&#x6548;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;
+&#x7B54;&#xFF1A;&#x628A;8&#x5DE6;&#x79FB;1&#x4F4D;</p>
+<p>5&#x3001;&#x4F7F;&#x7528;&#x5F02;&#x6216;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x52A0;&#x5BC6;&#x4E0E;&#x89E3;&#x5BC6;
+&#x52A0;&#x5BC6;&#x89E3;&#x5BC6;&#x5C31;&#x662F;&#x6309;&#x7167;&#x4E00;&#x5B9A;&#x89C4;&#x5219;&#x8FDB;&#x884C;&#x8FD0;&#x7B97;&#xFF0C;&#x7136;&#x540E;&#x5229;&#x7528;&#x8FD0;&#x7B97;&#x7ED3;&#x679C;&#x6765;&#x6C9F;&#x901A;&#xFF0C;&#x5B9E;&#x73B0;&#x522B;&#x4EBA;&#x770B;&#x4E0D;&#x61C2;&#xFF0C;&#x52A0;&#x5BC6;&#x6210;&#x529F;
+&#x4F46;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x5C31;&#x662F;&#x522B;&#x4EBA;&#x4E0D;&#x77E5;&#x9053;&#x4F60;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x6216;&#x8005;&#x4F60;&#x4E0E;&#x6C9F;&#x901A;&#x7684;&#x4EBA;&#x7684;&#x7EA6;&#x5B9A;
+&#x4F8B;&#x5982;&#x5BF9;01101011&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x89E3;&#x5BC6;&#xFF0C;&#x4E24;&#x4E2A;&#x4EBA;&#x90FD;&#x6709;&#x4E2A;&#x5BC6;&#x94A5;11001100&#xFF0C;&#x5C31;&#x662F;&#x52A0;&#x5BC6;&#x89E3;&#x5BC6;&#x7684;&#x5DE5;&#x5177;&#xFF08;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x5F00;&#x9501;&#x5173;&#x9501;&#x7684;&#x94A5;&#x5319;&#xFF09;
+&#x52A0;&#x5BC6;&#xFF1A;&#x8FDB;&#x884C;&#x5F02;&#x6216;&#x8FD0;&#x7B97;&#xFF0C;&#x76F8;&#x540C;&#x4E3A;0&#xFF0C;&#x4E0D;&#x540C;&#x4E3A;1
+&#x89E3;&#x5BC6;&#xFF1A;&#x5BC6;&#x94A5;&#x4E0E;&#x7ED3;&#x679C;&#x518D;&#x8FDB;&#x884C;&#x5F02;&#x6216;&#x8FD0;&#x7B97;</p>
+</07>
+    </div>
+
+</div>
+
+
+</body>
+<script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+<script>
+    $('.page-toc li').eq(0).children('a').addClass('red');
+    var arr = [];
+    $("h2,h3").each(function () {
+        $(this).attr('t',$(this).position().top);
+        arr.push($(this).position().top);
+    });
+    $(window).on('scroll', function () {
+        var cur = $(document).scrollTop();
+        for(var i = arr.length; i >=0;i--){
+            if(arr[i]<=cur){
+                break;
+            }
+        }
+        if(i===-1){
+            i = 0;
+        }
+        $('.page-toc li a').removeClass('red');
+        $('.page-toc li').eq(i).children('a').addClass('red')
+    });
+</script>
+</html>

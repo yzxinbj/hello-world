@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>hello_world</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                hello_world
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../../index.html">index</a></li><li><a href="#"><span></span>bcjc_notes</a><ul><li><a href="../../html/bcjc_notes/412数据宽度.html">412数据宽度</a></li><li><a href="../../html/bcjc_notes/413位运算.html">413位运算</a></li><li><a href="../../html/bcjc_notes/414寄存器.html">414寄存器</a></li><li class="active"><a href="../../html/bcjc_notes/417内存.html">417内存</a></li><li><a href="../../html/bcjc_notes/418.html">418</a></li><li><a href="../../html/bcjc_notes/419.html">419</a></li></ul></li><li><a href="#"><span></span>practice</a><ul><li><a href="../../html/practice/412进制005.html">412进制005</a></li><li><a href="../../html/practice/413进制考试.html">413进制考试</a></li><li><a href="../../html/practice/414汇编001.html">414汇编001</a></li></ul></li><li><a href="#"><span></span>be careful</a><ul><li><a href="../../html/be careful/错题.html">错题</a></li></ul></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul><li><a href="#t0内存">内存</a></li><li><a href="#t1lea">lea</a></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h2 id="t0&#x5185;&#x5B58;">&#x5185;&#x5B58; <a href="#t0&#x5185;&#x5B58;"> # </a></h2>
+<p>cpu&#x8BA1;&#x7B97;&#x6570;&#x636E;&#xFF0C;&#x5BC4;&#x5B58;&#x5668;&#x662F;&#x80AF;&#x5B9A;&#x4E0D;&#x591F;&#x7528;&#x7684;&#xFF0C;&#x6545;&#x53EF;&#x7528;&#x5185;&#x5B58;&#x4EE3;&#x66FF;<br>&#x4E00;&#x4E2A;&#x5185;&#x5B58;&#x5730;&#x5740;&#x4E0B;&#x5B58;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x7684;&#x6570;&#xFF0C;&#x4E00;&#x4E2A;&#x5B57;&#x8282;8&#x4F4D;<br>&#x5185;&#x5B58;&#x5730;&#x5740;&#x9700;&#x8981;&#x770B;cpu&#x7684;&#x4F4D;&#x6570;&#xFF0C;32&#x4F4D;&#x7684;cpu&#x5B83;&#x7684;&#x5BFB;&#x5740;&#x8303;&#x56F4;&#x53EA;&#x80FD;&#x662F;0~0xFFFFFFFF,&#x4E5F;&#x5C31;&#x662F;4GB<br>&#x5411;&#x5185;&#x5B58;&#x5730;&#x5740;&#x5B58;&#x503C;&#xFF0C;&#x9700;&#x8981;&#x4FDD;&#x8BC1;&#x5BBD;&#x5EA6;&#x76F8;&#x540C;<br>mov &#x548C; lea &#x4E0D;&#x80FD;&#x4E24;&#x8FB9;&#x90FD;&#x662F;&#x5185;&#x5B58;  </p>
+<h1 id="t1lea">lea <a href="#t1lea"> # </a></h1>
+<p>lea eax,DWORD ptr ds:[12345678] = mov eax,0x12345678  // &#x7ED3;&#x679C;&#x76F8;&#x540C;<br>mov eax,DWORD ptr ds:[12345678] // &#x8FD9;&#x662F;&#x5B58;12345678&#x5730;&#x5740;&#x91CC;&#x7684;&#x503C;&#x5230;eax  </p>
+<p>ebp esp &#x5199;ss&#xFF0C;&#x5176;&#x4ED6;&#x5199;ds</p>
+
+    </div>
+
+</div>
+
+
+</body>
+<script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+<script>
+    $('.page-toc li').eq(0).children('a').addClass('red');
+    var arr = [];
+    $("h2,h3").each(function () {
+        $(this).attr('t',$(this).position().top);
+        arr.push($(this).position().top);
+    });
+    $(window).on('scroll', function () {
+        var cur = $(document).scrollTop();
+        for(var i = arr.length; i >=0;i--){
+            if(arr[i]<=cur){
+                break;
+            }
+        }
+        if(i===-1){
+            i = 0;
+        }
+        $('.page-toc li a').removeClass('red');
+        $('.page-toc li').eq(i).children('a').addClass('red')
+    });
+</script>
+</html>

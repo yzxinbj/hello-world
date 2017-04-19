@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>hello_world</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                hello_world
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../../index.html">index</a></li><li><a href="#"><span></span>bcjc_notes</a><ul><li><a href="../../html/bcjc_notes/412数据宽度.html">412数据宽度</a></li><li class="active"><a href="../../html/bcjc_notes/413位运算.html">413位运算</a></li><li><a href="../../html/bcjc_notes/414寄存器.html">414寄存器</a></li><li><a href="../../html/bcjc_notes/417内存.html">417内存</a></li><li><a href="../../html/bcjc_notes/418.html">418</a></li><li><a href="../../html/bcjc_notes/419.html">419</a></li></ul></li><li><a href="#"><span></span>practice</a><ul><li><a href="../../html/practice/412进制005.html">412进制005</a></li><li><a href="../../html/practice/413进制考试.html">413进制考试</a></li><li><a href="../../html/practice/414汇编001.html">414汇编001</a></li></ul></li><li><a href="#"><span></span>be careful</a><ul><li><a href="../../html/be careful/错题.html">错题</a></li></ul></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul><li><a href="#t0位运算">位运算</a><ul><li><a href="#t1单目 双目  多目">单目 双目  多目</a></li><li><a href="#t2与">与</a></li><li><a href="#t3或">或</a></li><li><a href="#t4异或">异或</a></li><li><a href="#t5非">非</a></li><li><a href="#t6左移">左移</a></li><li><a href="#t7右移">右移</a></li><li><a href="#t8位运算实现加法">位运算实现加法</a></li><li><a href="#t9其他的运算均是加法的不同使用">其他的运算均是加法的不同使用</a></li></ul></li><li><a href="#t10小结">小结</a></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h1 id="t0&#x4F4D;&#x8FD0;&#x7B97;">&#x4F4D;&#x8FD0;&#x7B97; <a href="#t0&#x4F4D;&#x8FD0;&#x7B97;"> # </a></h1>
+<p>&#x7531;&#x4E8E;&#x786C;&#x4EF6;&#x9650;&#x5236;&#xFF0C;&#x8BA1;&#x7B97;&#x673A;&#x662F;&#x4E0D;&#x80FD;&#x591F;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x52A0;&#x6CD5;&#x8FD0;&#x7B97;<br>&#x672C;&#x8D28;&#x4E0A;&#x90FD;&#x662F;&#x5229;&#x7528;&#x7535;&#x8DEF;&#x7ED3;&#x6784;&#x8BBE;&#x8BA1;&#x5B9E;&#x73B0;&#x5404;&#x79CD;&#x903B;&#x8F91;&#x8FD0;&#x7B97;</p>
+<h2 id="t1&#x5355;&#x76EE; &#x53CC;&#x76EE;  &#x591A;&#x76EE;">&#x5355;&#x76EE; &#x53CC;&#x76EE;  &#x591A;&#x76EE; <a href="#t1&#x5355;&#x76EE; &#x53CC;&#x76EE;  &#x591A;&#x76EE;"> # </a></h2>
+<p>&#x5355;&#x76EE;&#xFF1A;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x503C;&#x53C2;&#x4E0E;&#x8FD0;&#x7B97;<br>&#x53CC;&#x76EE;&#xFF1A;&#x53EA;&#x9700;&#x8981;&#x4E8C;&#x4E2A;&#x503C;&#x53C2;&#x4E0E;&#x8FD0;&#x7B97;<br>&#x591A;&#x76EE;&#xFF1A;&#x591A;&#x4E2A;&#x503C;&#x8FDB;&#x884C;&#x8FD0;&#x7B97;  </p>
+<h2 id="t2&#x4E0E;">&#x4E0E; <a href="#t2&#x4E0E;"> # </a></h2>
+<p>and(&amp;)</p>
+<h2 id="t3&#x6216;">&#x6216; <a href="#t3&#x6216;"> # </a></h2>
+<p>or(|)</p>
+<h2 id="t4&#x5F02;&#x6216;">&#x5F02;&#x6216; <a href="#t4&#x5F02;&#x6216;"> # </a></h2>
+<p>xor(^)<br>&#x76F8;&#x540C;&#x4E3A;0&#xFF0C;&#x4E0D;&#x540C;&#x4E3A;1</p>
+<h2 id="t5&#x975E;">&#x975E; <a href="#t5&#x975E;"> # </a></h2>
+<p>not(~)</p>
+<h2 id="t6&#x5DE6;&#x79FB;">&#x5DE6;&#x79FB; <a href="#t6&#x5DE6;&#x79FB;"> # </a></h2>
+<p>shl(&lt;&lt;)<br>&#x9AD8;&#x4F4D;&#x4E22;&#x5F03;&#xFF0C;&#x4F4E;&#x4F4D;&#x8865;0</p>
+<h2 id="t7&#x53F3;&#x79FB;">&#x53F3;&#x79FB; <a href="#t7&#x53F3;&#x79FB;"> # </a></h2>
+<pre><code>&#x4F4E;&#x4F4D;&#x4E22;&#x5F03;&#xFF0C;&#x9AD8;&#x4F4D;&#x8865;0&#x6216;&#x8865;&#x7B26;&#x53F7;&#x4F4D;  
+shr&#x662F;&#x5728;&#x6C47;&#x7F16;&#x4E2D;&#x8865;0  
+sar&#x662F;&#x5728;&#x6C47;&#x7F16;&#x4E2D;&#x8865;&#x7B26;&#x53F7;&#x4F4D;   
+
+c&#x4E2D;&#x7EDF;&#x4E00;&#x4F7F;&#x7528; &gt;&gt; &#xFF0C;&#x901A;&#x8FC7;&#x58F0;&#x660E;&#x4E2D;&#x662F;&#x5426;&#x52A0;unsigned&#x6765;&#x533A;&#x5206;&#x8865;0&#x8FD8;&#x662F;&#x8865;&#x7B26;&#x53F7;&#x4F4D;  
+&#x65E0;&#x7B26;&#x53F7;&#x8865;0&#xFF0C;&#x6709;&#x7B26;&#x53F7;&#x8865;&#x7B26;&#x53F7;&#x4F4D;
+</code></pre><h2 id="t8&#x4F4D;&#x8FD0;&#x7B97;&#x5B9E;&#x73B0;&#x52A0;&#x6CD5;">&#x4F4D;&#x8FD0;&#x7B97;&#x5B9E;&#x73B0;&#x52A0;&#x6CD5; <a href="#t8&#x4F4D;&#x8FD0;&#x7B97;&#x5B9E;&#x73B0;&#x52A0;&#x6CD5;"> # </a></h2>
+<ul>
+<li>&#x5F02;&#x6216;&#x662F;&#x76F8;&#x540C;&#x4E3A;0&#xFF0C;&#x4E0D;&#x540C;&#x4E3A;1---&gt;&#x5F02;&#x6216;&#x7684;&#x7684;&#x7ED3;&#x679C;&#x5C31;&#x662F;&#x820D;&#x5F03;&#x4E86;&#x8FDB;&#x4F4D;&#x7684;&#x52A0;&#x6CD5;</li>
+<li>&#x7531;&#x4E8E;&#x8FDB;&#x4F4D;&#x88AB;&#x820D;&#x5F03;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x5224;&#x65AD;&#x662F;&#x5426;&#x6709;&#x8FDB;&#x4F4D;&#xFF1B;&#x7528;<code>&#x4E0E;&#x8FD0;&#x7B97;</code>&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x662F;&#x5426;&#x6709;&#x8FDB;&#x4F4D;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x4E0E;&#x8FD0;&#x7B97;&#x4E2D;&#x53EA;&#x6709;<code>1&amp;1=1</code></li>
+<li>&#x5982;&#x679C;&#x6709;&#x8FDB;&#x4F4D;&#xFF0C;&#x5373;<code>&#x4E0E;&#x8FD0;&#x7B97;</code>&#x7684;&#x7ED3;&#x679C;&#x4E0D;&#x4E3A;0&#xFF0C;&#x5219;&#x7528;<code>&#x4E0E;&#x8FD0;&#x7B97;&#x7684;&#x7ED3;&#x679C;&#x5DE6;&#x79FB;&#x540E;</code> &#x52A0;&#x4E0A; <code>&#x5F02;&#x6216;&#x7684;&#x7ED3;&#x679C;</code>&#x5373;&#x5F97;&#x5230;&#x4E86;&#x52A0;&#x6CD5;&#x7684;&#x6700;&#x7EC8;&#x7ED3;&#x679C;</li>
+<li>&#x6CE8;&#x610F;&#x6211;&#x4E0A;&#x9762;&#x8BF4;&#x7684;&#x662F;<code>&#x52A0;&#x4E0A;</code>&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E2A;&#x52A0;&#x9700;&#x8981;&#x5728;&#x91CD;&#x590D;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#xFF0C;&#x76F4;&#x5230;&#x5224;&#x65AD;&#x65E0;&#x8FDB;&#x4F4D;&#x624D;&#x7ED3;&#x675F;</li>
+</ul>
+<h2 id="t9&#x5176;&#x4ED6;&#x7684;&#x8FD0;&#x7B97;&#x5747;&#x662F;&#x52A0;&#x6CD5;&#x7684;&#x4E0D;&#x540C;&#x4F7F;&#x7528;">&#x5176;&#x4ED6;&#x7684;&#x8FD0;&#x7B97;&#x5747;&#x662F;&#x52A0;&#x6CD5;&#x7684;&#x4E0D;&#x540C;&#x4F7F;&#x7528; <a href="#t9&#x5176;&#x4ED6;&#x7684;&#x8FD0;&#x7B97;&#x5747;&#x662F;&#x52A0;&#x6CD5;&#x7684;&#x4E0D;&#x540C;&#x4F7F;&#x7528;"> # </a></h2>
+<ul>
+<li>&#x4F8B;&#x5982;&#xFF1A;&#x51CF;&#x6CD5;&#x5C31;&#x662F;&#x52A0;&#x8D1F;&#x6570;&#xFF0C;&#x4E58;&#x6CD5;&#x5C31;&#x662F;&#x91CD;&#x590D;&#x52A0;&#xFF0C;&#x9664;&#x6CD5;&#x5C31;&#x662F;&#x80FD;&#x51CF;&#x591A;&#x5C11;&#x6B21;&#xFF0C;&#x5373;&#x80FD;&#x52A0;&#x8D1F;&#x6570;&#x591A;&#x5C11;&#x6B21;</li>
+</ul>
+<h1 id="t10&#x5C0F;&#x7ED3;">&#x5C0F;&#x7ED3; <a href="#t10&#x5C0F;&#x7ED3;"> # </a></h1>
+<p>&#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#x672C;&#x8D28;&#x90FD;&#x662F;&#x7535;&#x8DEF;&#x5B9E;&#x73B0;&#xFF0C;&#x6240;&#x4EE5;&#x5C31;&#x4EA7;&#x751F;&#x4E86;&#x5404;&#x79CD;&#x903B;&#x8F91;&#x8FD0;&#x7B97;
+&#x5229;&#x7528;&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x5B9E;&#x73B0;&#x52A0;&#x51CF;&#x4E58;&#x9664;&#x540E;&#xFF0C;&#x5C31;&#x80FD;&#x5B9E;&#x73B0;&#x66F4;&#x590D;&#x6742;&#x7684;&#x8FD0;&#x7B97;</p>
+
+    </div>
+
+</div>
+
+
+</body>
+<script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+<script>
+    $('.page-toc li').eq(0).children('a').addClass('red');
+    var arr = [];
+    $("h2,h3").each(function () {
+        $(this).attr('t',$(this).position().top);
+        arr.push($(this).position().top);
+    });
+    $(window).on('scroll', function () {
+        var cur = $(document).scrollTop();
+        for(var i = arr.length; i >=0;i--){
+            if(arr[i]<=cur){
+                break;
+            }
+        }
+        if(i===-1){
+            i = 0;
+        }
+        $('.page-toc li a').removeClass('red');
+        $('.page-toc li').eq(i).children('a').addClass('red')
+    });
+</script>
+</html>
