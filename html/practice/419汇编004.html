@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>hello_world</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                hello_world
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../../index.html">index</a></li><li><a href="#"><span></span>bcjc_notes</a><ul><li><a href="../../html/bcjc_notes/412数据宽度.html">412数据宽度</a></li><li><a href="../../html/bcjc_notes/413位运算.html">413位运算</a></li><li><a href="../../html/bcjc_notes/414寄存器.html">414寄存器</a></li><li><a href="../../html/bcjc_notes/417内存.html">417内存</a></li><li><a href="../../html/bcjc_notes/418内存的5种表示形式.html">418内存的5种表示形式</a></li><li><a href="../../html/bcjc_notes/419小端存储和常用指令.html">419小端存储和常用指令</a></li></ul></li><li><a href="#"><span></span>practice</a><ul><li><a href="../../html/practice/412进制005.html">412进制005</a></li><li><a href="../../html/practice/413进制考试.html">413进制考试</a></li><li><a href="../../html/practice/414汇编001.html">414汇编001</a></li><li class="active"><a href="../../html/practice/419汇编004.html">419汇编004</a></li><li><a href="../../html/practice/419汇编005.html">419汇编005</a></li></ul></li><li><a href="#"><span></span>be careful</a><ul><li><a href="../../html/be careful/错题.html">错题</a></li></ul></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <14 小端存储模式="">
+
+
+<p>1&#x3001;&#x5C06;8&#x4E2A;8&#x4F4D;&#x7684;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#x4E2D;&#x7684;&#x503C;&#x5B58;&#x50A8;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#x3002;&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;&#x81EA;&#x5DF1;&#x6307;&#x5B9A;&#xFF0C;&#x4F46;&#x5FC5;&#x987B;&#x8FDE;&#x7EED;&#x3002;</p>
+<p>2&#x3001;&#x5C06;8&#x4E2A;16&#x4F4D;&#x7684;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#x4E2D;&#x7684;&#x503C;&#x5B58;&#x50A8;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#x3002;&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;&#x81EA;&#x5DF1;&#x6307;&#x5B9A;&#xFF0C;&#x4F46;&#x5FC5;&#x987B;&#x8FDE;&#x7EED;&#x3002;</p>
+<p>3&#x3001;&#x5C06;8&#x4E2A;32&#x4F4D;&#x7684;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#x4E2D;&#x7684;&#x503C;&#x5B58;&#x50A8;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#x3002;&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;&#x81EA;&#x5DF1;&#x6307;&#x5B9A;&#xFF0C;&#x4F46;&#x5FC5;&#x987B;&#x8FDE;&#x7EED;&#x3002;</p>
+<p>4&#x3001;mov dword ptr ds:[0x10001000],0x12345678 &#x8FD9;&#x884C;&#x6307;&#x4EE4;&#x6267;&#x884C;&#x540E;&#xFF0C;
+12&#x7684;&#x5185;&#x5B58;&#x7F16;&#x53F7;&#x662F;&#x591A;&#x5C11;&#xFF1F;56&#x7684;&#x5185;&#x5B58;&#x7F16;&#x53F7;&#x662F;&#x591A;&#x5C11;&#xFF1F;4&#x7684;&#x5185;&#x5B58;&#x7F16;&#x53F7;&#x662F;&#x591A;&#x5C11;&#xFF1F;8&#x7684;&#x5185;&#x5B58;&#x7F16;&#x53F7;&#x662F;&#x591A;&#x5C11;&#xFF1F;</p>
+<p>5&#x3001;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#x4E0E;&#x5BC4;&#x5B58;&#x5668;&#x4E2D;&#x7684;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#x4E00;&#x6837;&#x5417;&#xFF1F;</p>
+</14>
+    </div>
+
+</div>
+
+
+</body>
+<script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+<script>
+    $('.page-toc li').eq(0).children('a').addClass('red');
+    var arr = [];
+    $("h2,h3").each(function () {
+        $(this).attr('t',$(this).position().top);
+        arr.push($(this).position().top);
+    });
+    $(window).on('scroll', function () {
+        var cur = $(document).scrollTop();
+        for(var i = arr.length; i >=0;i--){
+            if(arr[i]<=cur){
+                break;
+            }
+        }
+        if(i===-1){
+            i = 0;
+        }
+        $('.page-toc li a').removeClass('red');
+        $('.page-toc li').eq(i).children('a').addClass('red')
+    });
+</script>
+</html>

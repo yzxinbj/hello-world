@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>hello_world</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                hello_world
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../../index.html">index</a></li><li><a href="#"><span></span>bcjc_notes</a><ul><li><a href="../../html/bcjc_notes/412数据宽度.html">412数据宽度</a></li><li><a href="../../html/bcjc_notes/413位运算.html">413位运算</a></li><li><a href="../../html/bcjc_notes/414寄存器.html">414寄存器</a></li><li><a href="../../html/bcjc_notes/417内存.html">417内存</a></li><li><a href="../../html/bcjc_notes/418内存的5种表示形式.html">418内存的5种表示形式</a></li><li><a href="../../html/bcjc_notes/419小端存储和常用指令.html">419小端存储和常用指令</a></li></ul></li><li><a href="#"><span></span>practice</a><ul><li><a href="../../html/practice/412进制005.html">412进制005</a></li><li><a href="../../html/practice/413进制考试.html">413进制考试</a></li><li><a href="../../html/practice/414汇编001.html">414汇编001</a></li><li><a href="../../html/practice/419汇编004.html">419汇编004</a></li><li class="active"><a href="../../html/practice/419汇编005.html">419汇编005</a></li></ul></li><li><a href="#"><span></span>be careful</a><ul><li><a href="../../html/be careful/错题.html">错题</a></li></ul></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <15 常用汇编指令练习="">
+
+<p>&#x4F7F;&#x7528; MOV&#x6307;&#x4EE4; ADD&#x6307;&#x4EE4; SUB&#x6307;&#x4EE4; AND&#x6307;&#x4EE4; OR&#x6307;&#x4EE4; XOR&#x6307;&#x4EE4; NOT&#x6307;&#x4EE4; &#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x79CD;&#x683C;&#x5F0F;&#x505A;&#x4E00;&#x4E2A;&#x5B9E;&#x9A8C; &#x89C2;&#x5BDF;&#x6267;&#x884C;&#x540E;&#x7684;&#x6548;&#x679C;</p>
+<p>&#x5982;&#xFF1A;</p>
+<p>ADD r/m8, imm8</p>
+<p>ADD r/m16,imm16</p>
+<p>ADD r/m32,imm32</p>
+<p>ADD r/m16, imm8 ADD r/m32, imm8 ADD r/m8, r8 ADD r/m16, r16 ADD r/m32, r32</p>
+<p>ADD r8, r/m8</p>
+<p>ADD r16, r/m16</p>
+<p>ADD r32, r/m32        </p>
+<p>&#x6BCF;&#x79CD;&#x683C;&#x5F0F;&#x90FD;&#x8981;&#x505A;    </p>
+</15>
+    </div>
+
+</div>
+
+
+</body>
+<script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+<script>
+    $('.page-toc li').eq(0).children('a').addClass('red');
+    var arr = [];
+    $("h2,h3").each(function () {
+        $(this).attr('t',$(this).position().top);
+        arr.push($(this).position().top);
+    });
+    $(window).on('scroll', function () {
+        var cur = $(document).scrollTop();
+        for(var i = arr.length; i >=0;i--){
+            if(arr[i]<=cur){
+                break;
+            }
+        }
+        if(i===-1){
+            i = 0;
+        }
+        $('.page-toc li a').removeClass('red');
+        $('.page-toc li').eq(i).children('a').addClass('red')
+    });
+</script>
+</html>

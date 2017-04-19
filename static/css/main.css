@@ -809,7 +809,6 @@ body, html {
 
 .page-toc {
     float: right;
-    /*position: fixed;*/
     top: 30px;
     right: 1px;
     width: 320px;

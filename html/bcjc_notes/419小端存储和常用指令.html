@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>hello_world</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                hello_world
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../../index.html">index</a></li><li><a href="#"><span></span>bcjc_notes</a><ul><li><a href="../../html/bcjc_notes/412数据宽度.html">412数据宽度</a></li><li><a href="../../html/bcjc_notes/413位运算.html">413位运算</a></li><li><a href="../../html/bcjc_notes/414寄存器.html">414寄存器</a></li><li><a href="../../html/bcjc_notes/417内存.html">417内存</a></li><li><a href="../../html/bcjc_notes/418内存的5种表示形式.html">418内存的5种表示形式</a></li><li class="active"><a href="../../html/bcjc_notes/419小端存储和常用指令.html">419小端存储和常用指令</a></li></ul></li><li><a href="#"><span></span>practice</a><ul><li><a href="../../html/practice/412进制005.html">412进制005</a></li><li><a href="../../html/practice/413进制考试.html">413进制考试</a></li><li><a href="../../html/practice/414汇编001.html">414汇编001</a></li><li><a href="../../html/practice/419汇编004.html">419汇编004</a></li><li><a href="../../html/practice/419汇编005.html">419汇编005</a></li></ul></li><li><a href="#"><span></span>be careful</a><ul><li><a href="../../html/be careful/错题.html">错题</a></li></ul></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul><li><a href="#t0小端存储">小端存储</a><ul><li><a href="#t1大端存储">大端存储</a></li><li><a href="#t2DTdebug">DTdebug</a></li></ul></li><li><a href="#t3常用汇编指令">常用汇编指令</a><ul><li><a href="#t4各个指令规则">各个指令规则</a></li></ul></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h1 id="t0&#x5C0F;&#x7AEF;&#x5B58;&#x50A8;">&#x5C0F;&#x7AEF;&#x5B58;&#x50A8; <a href="#t0&#x5C0F;&#x7AEF;&#x5B58;&#x50A8;"> # </a></h1>
+<p>&#x6570;&#x636E;&#x4F4E;8&#x4F4D;&#x5B58;&#x5165;&#x5185;&#x5B58;&#x4F4E;8&#x4F4D;&#xFF0C;&#x9AD8;8&#x4F4D;&#x5B58;&#x9AD8;8&#x4F4D;<br>&#x4E3A;&#x4EC0;&#x4E48;&#x662F;8&#x4F4D;&#x662F;&#x56E0;&#x4E3A;&#x5185;&#x5B58;&#x4E2D;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x662F;&#x4EE5;&#x4E00;&#x4E2A;&#x5B57;&#x8282;8&#x4F4D;&#x4E3A;&#x5355;&#x4F4D;</p>
+<h3 id="t1&#x5927;&#x7AEF;&#x5B58;&#x50A8;">&#x5927;&#x7AEF;&#x5B58;&#x50A8; <a href="#t1&#x5927;&#x7AEF;&#x5B58;&#x50A8;"> # </a></h3>
+<p>&#x6570;&#x636E;&#x9AD8;&#x4F4D;&#x5B58;&#x5185;&#x5EA6;&#x4F4E;&#x4F4D;&#xFF0C;&#x6570;&#x636E;&#x4F4E;&#x4F4D;&#x5B58;&#x5185;&#x5EA6;&#x9AD8;&#x4F4D;</p>
+<h3 id="t2DTdebug">DTdebug <a href="#t2DTdebug"> # </a></h3>
+<p>&#x5728;&#x547D;&#x4EE4;&#x91CC;&#x8F93;&#x5165;dd 006afff0,&#x53EF;&#x4EE5;&#x67E5;&#x770B;006afff0&#x4F4D;&#x7F6E;&#x7684;&#x5185;&#x5B58;<br>&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;db dw<br>dd:data dword<br>dw:data word</p>
+<h1 id="t3&#x5E38;&#x7528;&#x6C47;&#x7F16;&#x6307;&#x4EE4;">&#x5E38;&#x7528;&#x6C47;&#x7F16;&#x6307;&#x4EE4; <a href="#t3&#x5E38;&#x7528;&#x6C47;&#x7F16;&#x6307;&#x4EE4;"> # </a></h1>
+<p>&#x6570;&#x636E;&#x662F;&#x80FD;&#x5B58;&#x50A8;&#x5728;cpu&#x7684;&#x5BC4;&#x5B58;&#x5668;&#x548C;&#x5185;&#x5B58;&#x4E2D;<br>&#x5BC4;&#x5B58;&#x5668;&#x6709;&#x9650;&#xFF0C;&#x6545;&#x9700;&#x8981;&#x5185;&#x5B58;&#x6765;&#x5B58;</p>
+<h3 id="t4&#x5404;&#x4E2A;&#x6307;&#x4EE4;&#x89C4;&#x5219;">&#x5404;&#x4E2A;&#x6307;&#x4EE4;&#x89C4;&#x5219; <a href="#t4&#x5404;&#x4E2A;&#x6307;&#x4EE4;&#x89C4;&#x5219;"> # </a></h3>
+<p><img src="../..//static/img/1.png" alt=""><br><img src="../..//static/img/2.png" alt=""><br><img src="../..//static/img/3.png" alt=""><br><img src="../..//static/img/4.png" alt=""><br><img src="../..//static/img/5.png" alt=""><br><img src="../..//static/img/6.png" alt=""><br><img src="../..//static/img/7.png" alt="">  </p>
+
+    </div>
+
+</div>
+
+
+</body>
+<script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+<script>
+    $('.page-toc li').eq(0).children('a').addClass('red');
+    var arr = [];
+    $("h2,h3").each(function () {
+        $(this).attr('t',$(this).position().top);
+        arr.push($(this).position().top);
+    });
+    $(window).on('scroll', function () {
+        var cur = $(document).scrollTop();
+        for(var i = arr.length; i >=0;i--){
+            if(arr[i]<=cur){
+                break;
+            }
+        }
+        if(i===-1){
+            i = 0;
+        }
+        $('.page-toc li a').removeClass('red');
+        $('.page-toc li').eq(i).children('a').addClass('red')
+    });
+</script>
+</html>
