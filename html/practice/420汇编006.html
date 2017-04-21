@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>hello_world</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                hello_world
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../../index.html">index</a></li><li><a href="#"><span></span>bcjc_notes</a><ul><li><a href="../../html/bcjc_notes/412数据宽度.html">412数据宽度</a></li><li><a href="../../html/bcjc_notes/413位运算.html">413位运算</a></li><li><a href="../../html/bcjc_notes/414寄存器.html">414寄存器</a></li><li><a href="../../html/bcjc_notes/417内存.html">417内存</a></li><li><a href="../../html/bcjc_notes/418内存的5种表示形式.html">418内存的5种表示形式</a></li><li><a href="../../html/bcjc_notes/419小端存储和常用指令.html">419小端存储和常用指令</a></li><li><a href="../../html/bcjc_notes/420复制指令.html">420复制指令</a></li><li><a href="../../html/bcjc_notes/421堆栈相关指令.html">421堆栈相关指令</a></li></ul></li><li><a href="#"><span></span>practice</a><ul><li><a href="../../html/practice/412进制005.html">412进制005</a></li><li><a href="../../html/practice/413进制考试.html">413进制考试</a></li><li><a href="../../html/practice/414汇编001.html">414汇编001</a></li><li><a href="../../html/practice/419汇编004.html">419汇编004</a></li><li><a href="../../html/practice/419汇编005.html">419汇编005</a></li><li class="active"><a href="../../html/practice/420汇编006.html">420汇编006</a></li></ul></li><li><a href="#"><span></span>be careful</a><ul><li><a href="../../html/be careful/错题.html">错题</a></li></ul></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <16 内存复制指令="">
+
+<p>1&#x3001;&#x4F7F;&#x7528; MOVS &#x6307;&#x4EE4;&#x4ECE;&#x4E00;&#x4E2A;&#x5730;&#x5740;&#x5411;&#x53E6;&#x4E00;&#x4E2A;&#x5730;&#x5740;&#x590D;&#x5236;0x10&#x5B57;&#x8282;&#x7684;&#x6570;&#x636E;</p>
+<pre><code>mov ecx,0x10
+rep movs byte ptr es:[edi],byte ptr ds:[esi]
+
+mov ecx,0x4
+rep movs dword ptr es:[edi],dword ptr ds:[esi]
+</code></pre><p>2&#x3001;&#x5411;&#x67D0;&#x5757;&#x5185;&#x5B58;&#x4E2D;&#x586B;&#x5145;0x44&#x4E2A; 0xCC</p>
+<pre><code>mov ecx,0x44
+mov al,0xcc
+rep stos byte ptr es:[edi]
+</code></pre></16>
+    </div>
+
+</div>
+
+
+</body>
+<script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+<script>
+    $('.page-toc li').eq(0).children('a').addClass('red');
+    var arr = [];
+    $("h2,h3").each(function () {
+        $(this).attr('t',$(this).position().top);
+        arr.push($(this).position().top);
+    });
+    $(window).on('scroll', function () {
+        var cur = $(document).scrollTop();
+        for(var i = arr.length; i >=0;i--){
+            if(arr[i]<=cur){
+                break;
+            }
+        }
+        if(i===-1){
+            i = 0;
+        }
+        $('.page-toc li a').removeClass('red');
+        $('.page-toc li').eq(i).children('a').addClass('red')
+    });
+</script>
+</html>

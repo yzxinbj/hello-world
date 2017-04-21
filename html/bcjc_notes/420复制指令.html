@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>hello_world</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                hello_world
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../../index.html">index</a></li><li><a href="#"><span></span>bcjc_notes</a><ul><li><a href="../../html/bcjc_notes/412数据宽度.html">412数据宽度</a></li><li><a href="../../html/bcjc_notes/413位运算.html">413位运算</a></li><li><a href="../../html/bcjc_notes/414寄存器.html">414寄存器</a></li><li><a href="../../html/bcjc_notes/417内存.html">417内存</a></li><li><a href="../../html/bcjc_notes/418内存的5种表示形式.html">418内存的5种表示形式</a></li><li><a href="../../html/bcjc_notes/419小端存储和常用指令.html">419小端存储和常用指令</a></li><li class="active"><a href="../../html/bcjc_notes/420复制指令.html">420复制指令</a></li><li><a href="../../html/bcjc_notes/421堆栈相关指令.html">421堆栈相关指令</a></li></ul></li><li><a href="#"><span></span>practice</a><ul><li><a href="../../html/practice/412进制005.html">412进制005</a></li><li><a href="../../html/practice/413进制考试.html">413进制考试</a></li><li><a href="../../html/practice/414汇编001.html">414汇编001</a></li><li><a href="../../html/practice/419汇编004.html">419汇编004</a></li><li><a href="../../html/practice/419汇编005.html">419汇编005</a></li><li><a href="../../html/practice/420汇编006.html">420汇编006</a></li></ul></li><li><a href="#"><span></span>be careful</a><ul><li><a href="../../html/be careful/错题.html">错题</a></li></ul></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul><li><a href="#t0内存复制指令">内存复制指令</a><ul><li><a href="#t1movs指令：移动数据 内存到内存，但只能如下写法">movs指令：移动数据 内存到内存，但只能如下写法</a></li><li><a href="#t2EFL：标志寄存器">EFL：标志寄存器</a></li><li><a href="#t3stos：将AL/AX/EAX的值存储到[edi]这个内存中，且edi自增或自减">stos：将AL/AX/EAX的值存储到[edi]这个内存中，且edi自增或自减</a></li><li><a href="#t4rep:重复指令，重复次数按计数寄存器ecx中的值">rep:重复指令，重复次数按计数寄存器ecx中的值</a></li><li><a href="#t5通用寄存器一般作用">通用寄存器一般作用</a></li></ul></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h1 id="t0&#x5185;&#x5B58;&#x590D;&#x5236;&#x6307;&#x4EE4;">&#x5185;&#x5B58;&#x590D;&#x5236;&#x6307;&#x4EE4; <a href="#t0&#x5185;&#x5B58;&#x590D;&#x5236;&#x6307;&#x4EE4;"> # </a></h1>
+<p>movs stos rep</p>
+<h3 id="t1movs&#x6307;&#x4EE4;&#xFF1A;&#x79FB;&#x52A8;&#x6570;&#x636E; &#x5185;&#x5B58;&#x5230;&#x5185;&#x5B58;&#xFF0C;&#x4F46;&#x53EA;&#x80FD;&#x5982;&#x4E0B;&#x5199;&#x6CD5;">movs&#x6307;&#x4EE4;&#xFF1A;&#x79FB;&#x52A8;&#x6570;&#x636E; &#x5185;&#x5B58;&#x5230;&#x5185;&#x5B58;&#xFF0C;&#x4F46;&#x53EA;&#x80FD;&#x5982;&#x4E0B;&#x5199;&#x6CD5; <a href="#t1movs&#x6307;&#x4EE4;&#xFF1A;&#x79FB;&#x52A8;&#x6570;&#x636E; &#x5185;&#x5B58;&#x5230;&#x5185;&#x5B58;&#xFF0C;&#x4F46;&#x53EA;&#x80FD;&#x5982;&#x4E0B;&#x5199;&#x6CD5;"> # </a></h3>
+<pre><code>// &#x4E32;&#x590D;&#x5236;&#xFF0C;edi,esi&#x4F1A;&#x6839;&#x636E;byte&#x6216;word&#x6216;dword&#x6765;&#x786E;&#x5B9A;&#x662F;&#x81EA;&#x589E;1&#x4F4D;&#x8FD8;&#x662F;2&#x4F4D;&#x8FD8;&#x662F;4&#x4F4D;
+// &#x6CE8;&#x610F;&#x662F;es&#xFF0C;byte&#x53EF;&#x53D8;&#x4E3A;word dword
+movs byte ptr es:[edi],byte ptr ds:[esi]
+movs word ptr es:[edi],word ptr ds:[esi]
+movs dword ptr es:[edi],dword ptr ds:[esi]
+// &#x7B80;&#x5199;
+movsb
+movsw
+movsd
+</code></pre><h3 id="t2EFL&#xFF1A;&#x6807;&#x5FD7;&#x5BC4;&#x5B58;&#x5668;">EFL&#xFF1A;&#x6807;&#x5FD7;&#x5BC4;&#x5B58;&#x5668; <a href="#t2EFL&#xFF1A;&#x6807;&#x5FD7;&#x5BC4;&#x5B58;&#x5668;"> # </a></h3>
+<pre><code>DF&#x4F4D;&#xFF1A;&#x4E0B;&#x6807;&#x4E3A;10&#xFF0C;&#x5373;&#x7B2C;11&#x4F4D;&#x7684;&#x503C;
+&#x4E3A;0&#xFF0C;&#x5219;movs&#x4E2D;&#x7684;edi&#x548C;esi&#x81EA;&#x589E;&#xFF0C;&#x4E3A;1&#x5219;&#x81EA;&#x51CF;
+</code></pre><p><img src="../..//static/img/EFLAGS.png" alt=""></p>
+<h3 id="t3stos&#xFF1A;&#x5C06;AL/AX/EAX&#x7684;&#x503C;&#x5B58;&#x50A8;&#x5230;[edi]&#x8FD9;&#x4E2A;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x4E14;edi&#x81EA;&#x589E;&#x6216;&#x81EA;&#x51CF;">stos&#xFF1A;&#x5C06;AL/AX/EAX&#x7684;&#x503C;&#x5B58;&#x50A8;&#x5230;[edi]&#x8FD9;&#x4E2A;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x4E14;edi&#x81EA;&#x589E;&#x6216;&#x81EA;&#x51CF; <a href="#t3stos&#xFF1A;&#x5C06;AL/AX/EAX&#x7684;&#x503C;&#x5B58;&#x50A8;&#x5230;[edi]&#x8FD9;&#x4E2A;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x4E14;edi&#x81EA;&#x589E;&#x6216;&#x81EA;&#x51CF;"> # </a></h3>
+<pre><code>stos byte ptr es:[edi]
+stos word ptr es:[edi]
+stos dword ptr es:[edi]
+// &#x7B80;&#x5199;
+stosb
+stosw
+stosd
+</code></pre><h3 id="t4rep:&#x91CD;&#x590D;&#x6307;&#x4EE4;&#xFF0C;&#x91CD;&#x590D;&#x6B21;&#x6570;&#x6309;&#x8BA1;&#x6570;&#x5BC4;&#x5B58;&#x5668;ecx&#x4E2D;&#x7684;&#x503C;">rep:&#x91CD;&#x590D;&#x6307;&#x4EE4;&#xFF0C;&#x91CD;&#x590D;&#x6B21;&#x6570;&#x6309;&#x8BA1;&#x6570;&#x5BC4;&#x5B58;&#x5668;ecx&#x4E2D;&#x7684;&#x503C; <a href="#t4rep:&#x91CD;&#x590D;&#x6307;&#x4EE4;&#xFF0C;&#x91CD;&#x590D;&#x6B21;&#x6570;&#x6309;&#x8BA1;&#x6570;&#x5BC4;&#x5B58;&#x5668;ecx&#x4E2D;&#x7684;&#x503C;"> # </a></h3>
+<pre><code>mov ecx ,0x10
+rep movs dword ptr es:[edi],dword ptr ds:[esi]
+rep stos dword ptr es:[edi]
+</code></pre><h3 id="t5&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#x4E00;&#x822C;&#x4F5C;&#x7528;">&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#x4E00;&#x822C;&#x4F5C;&#x7528; <a href="#t5&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#x4E00;&#x822C;&#x4F5C;&#x7528;"> # </a></h3>
+<pre><code>eax&#xFF1A;&#x8FD4;&#x56DE;&#x503C;
+ecx&#xFF1A;&#x8BA1;&#x6570;&#x5668;
+esp&#xFF1A;&#x5806;&#x6808;
+ebp&#xFF1A;&#x5806;&#x6808;
+esi&#xFF1A;&#x4E32;&#x590D;&#x5236;&#x6E90;&#x5730;&#x5740;
+edi&#xFF1A;&#x4E32;&#x590D;&#x5236;&#x76EE;&#x6807;&#x5730;&#x5740;
+</code></pre>
+    </div>
+
+</div>
+
+
+</body>
+<script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+<script>
+    $('.page-toc li').eq(0).children('a').addClass('red');
+    var arr = [];
+    $("h2,h3").each(function () {
+        $(this).attr('t',$(this).position().top);
+        arr.push($(this).position().top);
+    });
+    $(window).on('scroll', function () {
+        var cur = $(document).scrollTop();
+        for(var i = arr.length; i >=0;i--){
+            if(arr[i]<=cur){
+                break;
+            }
+        }
+        if(i===-1){
+            i = 0;
+        }
+        $('.page-toc li a').removeClass('red');
+        $('.page-toc li').eq(i).children('a').addClass('red')
+    });
+</script>
+</html>

@@ -17,7 +17,7 @@
         </div>
         <input type="checkbox" id="idoc_nav" />
         <div class="menu_tree">
-        <ul><li><a href="../../index.html">index</a></li><li><a href="#"><span></span>bcjc_notes</a><ul><li><a href="../../html/bcjc_notes/412数据宽度.html">412数据宽度</a></li><li><a href="../../html/bcjc_notes/413位运算.html">413位运算</a></li><li class="active"><a href="../../html/bcjc_notes/414寄存器.html">414寄存器</a></li><li><a href="../../html/bcjc_notes/417内存.html">417内存</a></li><li><a href="../../html/bcjc_notes/418内存的5种表示形式.html">418内存的5种表示形式</a></li><li><a href="../../html/bcjc_notes/419小端存储和常用指令.html">419小端存储和常用指令</a></li></ul></li><li><a href="#"><span></span>practice</a><ul><li><a href="../../html/practice/412进制005.html">412进制005</a></li><li><a href="../../html/practice/413进制考试.html">413进制考试</a></li><li><a href="../../html/practice/414汇编001.html">414汇编001</a></li><li><a href="../../html/practice/419汇编004.html">419汇编004</a></li><li><a href="../../html/practice/419汇编005.html">419汇编005</a></li></ul></li><li><a href="#"><span></span>be careful</a><ul><li><a href="../../html/be careful/错题.html">错题</a></li></ul></li></ul>    
+        <ul><li><a href="../../index.html">index</a></li><li><a href="#"><span></span>bcjc_notes</a><ul><li><a href="../../html/bcjc_notes/412数据宽度.html">412数据宽度</a></li><li><a href="../../html/bcjc_notes/413位运算.html">413位运算</a></li><li class="active"><a href="../../html/bcjc_notes/414寄存器.html">414寄存器</a></li><li><a href="../../html/bcjc_notes/417内存.html">417内存</a></li><li><a href="../../html/bcjc_notes/418内存的5种表示形式.html">418内存的5种表示形式</a></li><li><a href="../../html/bcjc_notes/419小端存储和常用指令.html">419小端存储和常用指令</a></li><li><a href="../../html/bcjc_notes/420复制指令.html">420复制指令</a></li><li><a href="../../html/bcjc_notes/421堆栈相关指令.html">421堆栈相关指令</a></li></ul></li><li><a href="#"><span></span>practice</a><ul><li><a href="../../html/practice/412进制005.html">412进制005</a></li><li><a href="../../html/practice/413进制考试.html">413进制考试</a></li><li><a href="../../html/practice/414汇编001.html">414汇编001</a></li><li><a href="../../html/practice/419汇编004.html">419汇编004</a></li><li><a href="../../html/practice/419汇编005.html">419汇编005</a></li><li><a href="../../html/practice/420汇编006.html">420汇编006</a></li></ul></li><li><a href="#"><span></span>be careful</a><ul><li><a href="../../html/be careful/错题.html">错题</a></li></ul></li></ul>    
         </div>
         
         
@@ -35,40 +35,31 @@
 <div class="container">
 
     <div class="page-toc">
-        <ul><li><a href="#t0DTDebug">DTDebug</a><ul><li><a href="#t1操作">操作</a></li></ul></li><li><a href="#t2寄存器">寄存器</a></li><li><a href="#t3通用寄存器">通用寄存器</a><ul><li><a href="#t4如何使用通用寄存器">如何使用通用寄存器</a></li><li><a href="#t532位cpu能提供的寄存器">32位cpu能提供的寄存器</a></li><li><a href="#t6立即数，目标操作数，源操作数">立即数，目标操作数，源操作数</a></li></ul></li></ul>
+        <ul><li><a href="#t032位CPU所含有的寄存器">32位CPU所含有的寄存器</a><ul><li><a href="#t1寄存器">寄存器</a></li><li><a href="#t2通用寄存器">通用寄存器</a></li><li><a href="#t3如何使用通用寄存器">如何使用通用寄存器</a></li><li><a href="#t432位cpu能提供的寄存器">32位cpu能提供的寄存器</a></li></ul></li><li><a href="#t5DTDebug">DTDebug</a><ul><li><a href="#t6操作">操作</a></li></ul></li></ul>
     </div>
     
     <div class="content markdown-body">
-        <h1 id="t0DTDebug">DTDebug <a href="#t0DTDebug"> # </a></h1>
+        <h1 id="t032&#x4F4D;CPU&#x6240;&#x542B;&#x6709;&#x7684;&#x5BC4;&#x5B58;&#x5668;">32&#x4F4D;CPU&#x6240;&#x542B;&#x6709;&#x7684;&#x5BC4;&#x5B58;&#x5668; <a href="#t032&#x4F4D;CPU&#x6240;&#x542B;&#x6709;&#x7684;&#x5BC4;&#x5B58;&#x5668;"> # </a></h1>
 <blockquote>
-<p>&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x67E5;&#x770B;.exe&#x6587;&#x4EF6;&#x6210;&#x6C47;&#x7F16;&#x6307;&#x4EE4;&#x7684;&#x8F6F;&#x4EF6;<br>&#x4E00;&#x6B3E;&#x8C03;&#x8BD5;&#x5668;</p>
+<p>4&#x4E2A;&#x6570;&#x636E;&#x5BC4;&#x5B58;&#x5668;(EAX&#x3001;EBX&#x3001;ECX&#x548C;EDX)<br>2&#x4E2A;&#x53D8;&#x5740;&#x548C;&#x6307;&#x9488;&#x5BC4;&#x5B58;&#x5668;(ESI&#x548C;EDI) 2&#x4E2A;&#x6307;&#x9488;&#x5BC4;&#x5B58;&#x5668;(ESP&#x548C;EBP)<br>6&#x4E2A;&#x6BB5;&#x5BC4;&#x5B58;&#x5668;(ES&#x3001;CS&#x3001;SS&#x3001;DS&#x3001;FS&#x548C;GS)<br>1&#x4E2A;&#x6307;&#x4EE4;&#x6307;&#x9488;&#x5BC4;&#x5B58;&#x5668;(EIP) 1&#x4E2A;&#x6807;&#x5FD7;&#x5BC4;&#x5B58;&#x5668;(EFlags)</p>
 </blockquote>
-<h3 id="t1&#x64CD;&#x4F5C;">&#x64CD;&#x4F5C; <a href="#t1&#x64CD;&#x4F5C;"> # </a></h3>
-<ul>
-<li>F2&#xFF1A;&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;&#xFF0C;&#x53EA;&#x8981;&#x5728;&#x5149;&#x6807;&#x5B9A;&#x4F4D;&#x7684;&#x4F4D;&#x7F6E;&#xFF08;&#x4E0A;&#x56FE;&#x4E2D;&#x7070;&#x8272;&#x6761;&#xFF09;&#x6309;F2&#x952E;&#x5373;&#x53EF;&#xFF0C;&#x518D;&#x6309;&#x4E00;&#x6B21;F2&#x952E;&#x5219;&#x4F1A;&#x5220;&#x9664;&#x65AD;&#x70B9;&#x3002;&#xFF08;&#x76F8;&#x5F53;&#x4E8E; SoftICE &#x4E2D;&#x7684; F9&#xFF09;</li>
-<li>F8&#xFF1A;&#x5355;&#x6B65;&#x6B65;&#x8FC7;&#x3002;&#x6BCF;&#x6309;&#x4E00;&#x6B21;&#x8FD9;&#x4E2A;&#x952E;&#x6267;&#x884C;&#x4E00;&#x6761;&#x53CD;&#x6C47;&#x7F16;&#x7A97;&#x53E3;&#x4E2D;&#x7684;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#xFF0C;&#x9047;&#x5230; CALL &#x7B49;&#x5B50;&#x7A0B;&#x5E8F;&#x4E0D;&#x8FDB;&#x5165;&#x5176;&#x4EE3;&#x7801;&#x3002;&#xFF08;&#x76F8;&#x5F53;&#x4E8E; SoftICE &#x4E2D;&#x7684; F10&#xFF09;</li>
-<li>F7&#xFF1A;&#x5355;&#x6B65;&#x6B65;&#x5165;&#x3002;&#x529F;&#x80FD;&#x540C;&#x5355;&#x6B65;&#x6B65;&#x8FC7;(F8)&#x7C7B;&#x4F3C;&#xFF0C;&#x533A;&#x522B;&#x662F;&#x9047;&#x5230; CALL &#x7B49;&#x5B50;&#x7A0B;&#x5E8F;&#x65F6;&#x4F1A;&#x8FDB;&#x5165;&#x5176;&#x4E2D;&#xFF0C;&#x8FDB;&#x5165;&#x540E;&#x9996;&#x5148;&#x4F1A;&#x505C;&#x7559;&#x5728;&#x5B50;&#x7A0B;&#x5E8F;&#x7684;&#x7B2C;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x4E0A;&#x3002;&#xFF08;&#x76F8;&#x5F53;&#x4E8E; SoftICE &#x4E2D;&#x7684; F8&#xFF09;</li>
-<li>F4&#xFF1A;&#x8FD0;&#x884C;&#x5230;&#x9009;&#x5B9A;&#x4F4D;&#x7F6E;&#x3002;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x76F4;&#x63A5;&#x8FD0;&#x884C;&#x5230;&#x5149;&#x6807;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#x5904;&#x6682;&#x505C;&#x3002;&#xFF08;&#x76F8;&#x5F53;&#x4E8E; SoftICE &#x4E2D;&#x7684; F7&#xFF09;</li>
-<li>F9&#xFF1A;&#x8FD0;&#x884C;&#x3002;&#x6309;&#x4E0B;&#x8FD9;&#x4E2A;&#x952E;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x76F8;&#x5E94;&#x65AD;&#x70B9;&#x7684;&#x8BDD;&#xFF0C;&#x88AB;&#x8C03;&#x8BD5;&#x7684;&#x7A0B;&#x5E8F;&#x5C06;&#x76F4;&#x63A5;&#x5F00;&#x59CB;&#x8FD0;&#x884C;&#x3002;&#xFF08;&#x76F8;&#x5F53;&#x4E8E; SoftICE &#x4E2D;&#x7684; F5&#xFF09;</li>
-<li>CTR+F9&#xFF1A;&#x6267;&#x884C;&#x5230;&#x8FD4;&#x56DE;&#x3002;&#x6B64;&#x547D;&#x4EE4;&#x5728;&#x6267;&#x884C;&#x5230;&#x4E00;&#x4E2A; ret (&#x8FD4;&#x56DE;&#x6307;&#x4EE4;)&#x6307;&#x4EE4;&#x65F6;&#x6682;&#x505C;&#xFF0C;&#x5E38;&#x7528;&#x4E8E;&#x4ECE;&#x7CFB;&#x7EDF;&#x9886;&#x7A7A;&#x8FD4;&#x56DE;&#x5230;&#x6211;&#x4EEC;&#x8C03;&#x8BD5;&#x7684;&#x7A0B;&#x5E8F;&#x9886;&#x7A7A;&#x3002;&#xFF08;&#x76F8;&#x5F53;&#x4E8E; SoftICE &#x4E2D;&#x7684; F12&#xFF09;</li>
-<li>ALT+F9&#xFF1A;&#x6267;&#x884C;&#x5230;&#x7528;&#x6237;&#x4EE3;&#x7801;&#x3002;&#x53EF;&#x7528;&#x4E8E;&#x4ECE;&#x7CFB;&#x7EDF;&#x9886;&#x7A7A;&#x5FEB;&#x901F;&#x8FD4;&#x56DE;&#x5230;&#x6211;&#x4EEC;&#x8C03;&#x8BD5;&#x7684;&#x7A0B;&#x5E8F;&#x9886;&#x7A7A;&#x3002;&#xFF08;&#x76F8;&#x5F53;&#x4E8E; SoftICE &#x4E2D;&#x7684; F11&#xFF09;</li>
-</ul>
-<h1 id="t2&#x5BC4;&#x5B58;&#x5668;">&#x5BC4;&#x5B58;&#x5668; <a href="#t2&#x5BC4;&#x5B58;&#x5668;"> # </a></h1>
+<h3 id="t1&#x5BC4;&#x5B58;&#x5668;">&#x5BC4;&#x5B58;&#x5668; <a href="#t1&#x5BC4;&#x5B58;&#x5668;"> # </a></h3>
 <blockquote>
 <p>&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x9886;&#x57DF;&#xFF0C;&#x5BC4;&#x5B58;&#x5668;&#x662F;CPU&#x5185;&#x90E8;&#x7684;&#x5143;&#x4EF6;&#xFF0C;&#x5305;&#x62EC;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#x3001;&#x4E13;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#x548C;&#x63A7;&#x5236;&#x5BC4;&#x5B58;&#x5668;&#x3002;<br>&#x5BC4;&#x5B58;&#x5668;&#x62E5;&#x6709;&#x975E;&#x5E38;&#x9AD8;&#x7684;&#x8BFB;&#x5199;&#x901F;&#x5EA6;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x5BC4;&#x5B58;&#x5668;&#x4E4B;&#x95F4;&#x7684;&#x6570;&#x636E;&#x4F20;&#x9001;&#x975E;&#x5E38;&#x5FEB;&#x3002;<br>&#x4E13;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#x90FD;&#x6709;&#x7279;&#x5B9A;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x4F8B;&#x5982;&#x5B58;&#x50A8;&#x4E0B;&#x4E00;&#x6761;&#x6307;&#x4EE4;EIP&#x5BC4;&#x5B58;&#x5668;&#xFF0C;&#x4E0D;&#x80FD;&#x505A;&#x4ED6;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x5176;&#x4E0D;&#x80FD;&#x53EB;&#x505A;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;</p>
 </blockquote>
-<h1 id="t3&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;">&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668; <a href="#t3&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;"> # </a></h1>
+<h3 id="t2&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;">&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668; <a href="#t2&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;"> # </a></h3>
 <blockquote>
 <p>&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#x53EF;&#x7528;&#x4E8E;&#x4F20;&#x9001;&#x548C;&#x6682;&#x5B58;&#x6570;&#x636E;&#xFF0C;&#x4E5F;&#x53EF;&#x53C2;&#x4E0E;&#x7B97;&#x672F;&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#xFF0C;&#x5E76;&#x4FDD;&#x5B58;&#x8FD0;&#x7B97;&#x7ED3;&#x679C;&#x3002;<br>&#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x7A0B;&#x5E8F;&#x5458;&#x5FC5;&#x987B;&#x719F;&#x6089;&#x6BCF;&#x4E2A;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x4E00;&#x822C;&#x7528;&#x9014;&#x548C;&#x7279;&#x6B8A;&#x7528;&#x9014;&#xFF0C;&#x53EA;&#x6709;&#x8FD9;&#x6837;&#xFF0C;&#x624D;&#x80FD;&#x5728;<br>&#x7A0B;&#x5E8F;&#x4E2D;&#x505A;&#x5230;&#x6B63;&#x786E;&#x3001;&#x5408;&#x7406;&#x5730;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#x3002;</p>
 <p>&#x8BA1;&#x7B97;&#x673A;&#x4E2D;cpu&#xFF0C;&#x5185;&#x5B58;&#xFF0C;&#x786C;&#x76D8;&#xFF0C;&#x5747;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x6570;&#x636E;&#xFF0C;&#x5BC4;&#x5B58;&#x5668;&#x5C31;&#x662F;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x7684;&#x5730;&#x65B9;<br>&#x5176;&#x5927;&#x5C0F;&#x7531;cpu&#x51B3;&#x5B9A;&#xFF0C;&#x5982;&#x679C;&#x662F;32&#x4F4D;&#x7684;cpu&#xFF0C;&#x5219;&#x53EF;&#x63D0;&#x4F9B;&#x7684;&#x5BC4;&#x5B58;&#x5668;&#x5C31;&#x6709;&#x4E09;&#x79CD;&#x7D2F;&#x5FC3;&#x5206;&#x522B;&#x662F;32&#x4F4D;&#xFF0C;16&#x4F4D;&#x548C;8&#x4F4D;&#x7684;&#xFF0C;<br>&#x6545;64&#x4F4D;&#x7684;&#x5C31;&#x53EF;&#x4EE5;&#x518D;&#x591A;&#x63D0;&#x4F9B;&#x4E00;&#x79CD;64&#x4F4D;&#x7684;&#x5BC4;&#x5B58;&#x5668;&#xFF0C;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x5BB9;&#x5668;&#x6765;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x7684;&#x5BB9;&#x5668;</p>
 </blockquote>
 <p>32&#x4F4D;cpu&#x7684;8&#x4E2A;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#xFF1A;<code>EAX</code> <code>ECX</code> <code>EDX</code> <code>EBX</code> <code>ESP</code> <code>EBP</code> <code>ESI</code> <code>EDI</code></p>
-<h3 id="t4&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;">&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668; <a href="#t4&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;"> # </a></h3>
+<h3 id="t3&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;">&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668; <a href="#t3&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;"> # </a></h3>
 <ul>
-<li>mov&#x6307;&#x4EE4;&#xFF1A;&#x79FB;&#x52A8;&#x6570;&#x636E;</li>
+<li>mov&#x6307;&#x4EE4;&#xFF1A;&#x79FB;&#x52A8;&#x6570;&#x636E;&#xFF0C;&#x4F8B;&#xFF1A;mov eax,0x12ffa342</li>
 <li>&#x5BC4;&#x5B58;&#x5668;&#xFF0C;&#x5185;&#x5B58;&#xFF0C;&#x6307;&#x4EE4;</li>
+<li>&#x4E00;&#x4E9B;&#x6982;&#x5FF5;&#xFF1A;&#x7ACB;&#x5373;&#x6570;&#xFF0C;&#x76EE;&#x6807;&#x64CD;&#x4F5C;&#x6570;&#xFF0C;&#x6E90;&#x64CD;&#x4F5C;&#x6570;</li>
 </ul>
-<h3 id="t532&#x4F4D;cpu&#x80FD;&#x63D0;&#x4F9B;&#x7684;&#x5BC4;&#x5B58;&#x5668;">32&#x4F4D;cpu&#x80FD;&#x63D0;&#x4F9B;&#x7684;&#x5BC4;&#x5B58;&#x5668; <a href="#t532&#x4F4D;cpu&#x80FD;&#x63D0;&#x4F9B;&#x7684;&#x5BC4;&#x5B58;&#x5668;"> # </a></h3>
+<h3 id="t432&#x4F4D;cpu&#x80FD;&#x63D0;&#x4F9B;&#x7684;&#x5BC4;&#x5B58;&#x5668;">32&#x4F4D;cpu&#x80FD;&#x63D0;&#x4F9B;&#x7684;&#x5BC4;&#x5B58;&#x5668; <a href="#t432&#x4F4D;cpu&#x80FD;&#x63D0;&#x4F9B;&#x7684;&#x5BC4;&#x5B58;&#x5668;"> # </a></h3>
 <table>
 <thead>
 <tr>
@@ -120,7 +111,21 @@
 </tr>
 </tbody>
 </table>
-<h3 id="t6&#x7ACB;&#x5373;&#x6570;&#xFF0C;&#x76EE;&#x6807;&#x64CD;&#x4F5C;&#x6570;&#xFF0C;&#x6E90;&#x64CD;&#x4F5C;&#x6570;">&#x7ACB;&#x5373;&#x6570;&#xFF0C;&#x76EE;&#x6807;&#x64CD;&#x4F5C;&#x6570;&#xFF0C;&#x6E90;&#x64CD;&#x4F5C;&#x6570; <a href="#t6&#x7ACB;&#x5373;&#x6570;&#xFF0C;&#x76EE;&#x6807;&#x64CD;&#x4F5C;&#x6570;&#xFF0C;&#x6E90;&#x64CD;&#x4F5C;&#x6570;"> # </a></h3>
+<h1 id="t5DTDebug">DTDebug <a href="#t5DTDebug"> # </a></h1>
+<blockquote>
+<p>&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x67E5;&#x770B;.exe&#x6587;&#x4EF6;&#x6210;&#x6C47;&#x7F16;&#x6307;&#x4EE4;&#x7684;&#x8F6F;&#x4EF6;<br>&#x4E00;&#x6B3E;&#x8C03;&#x8BD5;&#x5668;</p>
+</blockquote>
+<h3 id="t6&#x64CD;&#x4F5C;">&#x64CD;&#x4F5C; <a href="#t6&#x64CD;&#x4F5C;"> # </a></h3>
+<ul>
+<li>&#x6B65;&#x8FC7;(F8) &#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E00;&#x6837;&#x6B65;&#x5165;(F7)&#xFF0C;&#x5F53;rel&#xFF08;&#x91CD;&#x590D;&#xFF09;&#x6216;call&#x65F6;&#x4F1A;&#x6709;&#x4E0D;&#x540C;</li>
+<li>F2&#xFF1A;&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;&#xFF0C;&#x53EA;&#x8981;&#x5728;&#x5149;&#x6807;&#x5B9A;&#x4F4D;&#x7684;&#x4F4D;&#x7F6E;&#xFF08;&#x4E0A;&#x56FE;&#x4E2D;&#x7070;&#x8272;&#x6761;&#xFF09;&#x6309;F2&#x952E;&#x5373;&#x53EF;&#xFF0C;&#x518D;&#x6309;&#x4E00;&#x6B21;F2&#x952E;&#x5219;&#x4F1A;&#x5220;&#x9664;&#x65AD;&#x70B9;&#x3002;&#xFF08;&#x76F8;&#x5F53;&#x4E8E; SoftICE &#x4E2D;&#x7684; F9&#xFF09;</li>
+<li>F8&#xFF1A;&#x5355;&#x6B65;&#x6B65;&#x8FC7;&#x3002;&#x6BCF;&#x6309;&#x4E00;&#x6B21;&#x8FD9;&#x4E2A;&#x952E;&#x6267;&#x884C;&#x4E00;&#x6761;&#x53CD;&#x6C47;&#x7F16;&#x7A97;&#x53E3;&#x4E2D;&#x7684;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#xFF0C;&#x9047;&#x5230; CALL &#x7B49;&#x5B50;&#x7A0B;&#x5E8F;&#x4E0D;&#x8FDB;&#x5165;&#x5176;&#x4EE3;&#x7801;&#x3002;&#xFF08;&#x76F8;&#x5F53;&#x4E8E; SoftICE &#x4E2D;&#x7684; F10&#xFF09;</li>
+<li>F7&#xFF1A;&#x5355;&#x6B65;&#x6B65;&#x5165;&#x3002;&#x529F;&#x80FD;&#x540C;&#x5355;&#x6B65;&#x6B65;&#x8FC7;(F8)&#x7C7B;&#x4F3C;&#xFF0C;&#x533A;&#x522B;&#x662F;&#x9047;&#x5230; CALL &#x7B49;&#x5B50;&#x7A0B;&#x5E8F;&#x65F6;&#x4F1A;&#x8FDB;&#x5165;&#x5176;&#x4E2D;&#xFF0C;&#x8FDB;&#x5165;&#x540E;&#x9996;&#x5148;&#x4F1A;&#x505C;&#x7559;&#x5728;&#x5B50;&#x7A0B;&#x5E8F;&#x7684;&#x7B2C;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x4E0A;&#x3002;&#xFF08;&#x76F8;&#x5F53;&#x4E8E; SoftICE &#x4E2D;&#x7684; F8&#xFF09;</li>
+<li>F4&#xFF1A;&#x8FD0;&#x884C;&#x5230;&#x9009;&#x5B9A;&#x4F4D;&#x7F6E;&#x3002;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x76F4;&#x63A5;&#x8FD0;&#x884C;&#x5230;&#x5149;&#x6807;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#x5904;&#x6682;&#x505C;&#x3002;&#xFF08;&#x76F8;&#x5F53;&#x4E8E; SoftICE &#x4E2D;&#x7684; F7&#xFF09;</li>
+<li>F9&#xFF1A;&#x8FD0;&#x884C;&#x3002;&#x6309;&#x4E0B;&#x8FD9;&#x4E2A;&#x952E;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x76F8;&#x5E94;&#x65AD;&#x70B9;&#x7684;&#x8BDD;&#xFF0C;&#x88AB;&#x8C03;&#x8BD5;&#x7684;&#x7A0B;&#x5E8F;&#x5C06;&#x76F4;&#x63A5;&#x5F00;&#x59CB;&#x8FD0;&#x884C;&#x3002;&#xFF08;&#x76F8;&#x5F53;&#x4E8E; SoftICE &#x4E2D;&#x7684; F5&#xFF09;</li>
+<li>CTR+F9&#xFF1A;&#x6267;&#x884C;&#x5230;&#x8FD4;&#x56DE;&#x3002;&#x6B64;&#x547D;&#x4EE4;&#x5728;&#x6267;&#x884C;&#x5230;&#x4E00;&#x4E2A; ret (&#x8FD4;&#x56DE;&#x6307;&#x4EE4;)&#x6307;&#x4EE4;&#x65F6;&#x6682;&#x505C;&#xFF0C;&#x5E38;&#x7528;&#x4E8E;&#x4ECE;&#x7CFB;&#x7EDF;&#x9886;&#x7A7A;&#x8FD4;&#x56DE;&#x5230;&#x6211;&#x4EEC;&#x8C03;&#x8BD5;&#x7684;&#x7A0B;&#x5E8F;&#x9886;&#x7A7A;&#x3002;&#xFF08;&#x76F8;&#x5F53;&#x4E8E; SoftICE &#x4E2D;&#x7684; F12&#xFF09;</li>
+<li>ALT+F9&#xFF1A;&#x6267;&#x884C;&#x5230;&#x7528;&#x6237;&#x4EE3;&#x7801;&#x3002;&#x53EF;&#x7528;&#x4E8E;&#x4ECE;&#x7CFB;&#x7EDF;&#x9886;&#x7A7A;&#x5FEB;&#x901F;&#x8FD4;&#x56DE;&#x5230;&#x6211;&#x4EEC;&#x8C03;&#x8BD5;&#x7684;&#x7A0B;&#x5E8F;&#x9886;&#x7A7A;&#x3002;&#xFF08;&#x76F8;&#x5F53;&#x4E8E; SoftICE &#x4E2D;&#x7684; F11&#xFF09;</li>
+</ul>
 
     </div>
 
