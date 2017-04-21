@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>hello_world</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                hello_world
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../../index.html">index</a></li><li><a href="#"><span></span>bcjc_notes</a><ul><li><a href="../../html/bcjc_notes/412数据宽度.html">412数据宽度</a></li><li><a href="../../html/bcjc_notes/413位运算.html">413位运算</a></li><li><a href="../../html/bcjc_notes/414寄存器.html">414寄存器</a></li><li><a href="../../html/bcjc_notes/417内存.html">417内存</a></li><li><a href="../../html/bcjc_notes/418内存的5种表示形式.html">418内存的5种表示形式</a></li><li><a href="../../html/bcjc_notes/419小端存储和常用指令.html">419小端存储和常用指令</a></li><li><a href="../../html/bcjc_notes/420复制指令.html">420复制指令</a></li><li class="active"><a href="../../html/bcjc_notes/421堆栈相关指令.html">421堆栈相关指令</a></li></ul></li><li><a href="#"><span></span>practice</a><ul><li><a href="../../html/practice/412进制005.html">412进制005</a></li><li><a href="../../html/practice/413进制考试.html">413进制考试</a></li><li><a href="../../html/practice/414汇编001.html">414汇编001</a></li><li><a href="../../html/practice/419汇编004.html">419汇编004</a></li><li><a href="../../html/practice/419汇编005.html">419汇编005</a></li><li><a href="../../html/practice/420汇编006.html">420汇编006</a></li></ul></li><li><a href="#"><span></span>be careful</a><ul><li><a href="../../html/be careful/错题.html">错题</a></li></ul></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul><li><a href="#t0堆栈相关指令">堆栈相关指令</a><ul><li><a href="#t1什么是堆栈？">什么是堆栈？</a></li><li><a href="#t2FS段寄存器">FS段寄存器</a></li><li><a href="#t3ESP栈指针寄存器">ESP栈指针寄存器</a></li><li><a href="#t4堆栈的使用push">堆栈的使用push</a></li><li><a href="#t5pop">pop</a></li></ul></li><li><a href="#t6小结">小结</a></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h1 id="t0&#x5806;&#x6808;&#x76F8;&#x5173;&#x6307;&#x4EE4;">&#x5806;&#x6808;&#x76F8;&#x5173;&#x6307;&#x4EE4; <a href="#t0&#x5806;&#x6808;&#x76F8;&#x5173;&#x6307;&#x4EE4;"> # </a></h1>
+<h3 id="t1&#x4EC0;&#x4E48;&#x662F;&#x5806;&#x6808;&#xFF1F;">&#x4EC0;&#x4E48;&#x662F;&#x5806;&#x6808;&#xFF1F; <a href="#t1&#x4EC0;&#x4E48;&#x662F;&#x5806;&#x6808;&#xFF1F;"> # </a></h3>
+<p>&#x5806;&#x6808;&#x662F;&#x5728;&#x7A0B;&#x5E8F;&#x505A;&#x8FD0;&#x7B97;&#x65F6;&#x7528;&#x6765;&#x5B58;&#x50A8;&#x4E2D;&#x95F4;&#x7ED3;&#x679C;&#x7684;  </p>
+<blockquote>
+<p>&#x6BCF;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF08;&#x8FDB;&#x7A0B;&#xFF09;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;4GB&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;<br>&#x4F46;&#x5E76;&#x4E0D;&#x662F;4GB&#x5C31;&#x4E00;&#x5B9A;&#x662F;&#x8FDB;&#x7A0B;&#x6765;&#x7528;&#x4E86;&#xFF0C;&#x4F60;&#x8981;&#x7528;&#x9700;&#x8981;&#x7533;&#x8BF7;<br>&#x672C;&#x8D28;&#x5C31;&#x662F;&#x4E00;&#x5757;&#x5185;&#x5B58;&#xFF0C;&#x662F;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5728;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x5DF2;&#x7ECF;&#x5206;&#x914D;&#x597D;&#x7684;&#xFF0C;&#x4F9B;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x65F6;&#x4F7F;&#x7528;
+&#x5806;&#x6808;&#x5C31;&#x662F;&#x7A0B;&#x5E8F;&#x7684;&#x5FC3;&#x810F;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x91CD;&#x8981;&#x6570;&#x636E;&#x90FD;&#x5728;&#x5806;&#x6808;&#x4E2D;&#x7ECF;&#x8FC7;  </p>
+</blockquote>
+<h3 id="t2FS&#x6BB5;&#x5BC4;&#x5B58;&#x5668;">FS&#x6BB5;&#x5BC4;&#x5B58;&#x5668; <a href="#t2FS&#x6BB5;&#x5BC4;&#x5B58;&#x5668;"> # </a></h3>
+<pre><code>FS&#x5B58;&#x50A8;&#x7684;&#x662F;&#x5B58;&#x50A8;`&#x5806;&#x6808;&#x7684;&#x5185;&#x5B58;&#x5730;&#x5740;`&#x7684;&#x5185;&#x5B58;&#x5730;&#x5740;  
+&#x89E3;&#x91CA;&#xFF1A;FS&#xFF1A;0x00ff1234(&#x5730;&#x5740;)--&gt;0x00ff1234+0x4&#xFF1A;0x0019ff11(top of thread&apos;s stack)--&gt;0x0019ff11(&#x5806;&#x6808;&#x9876;&#x5185;&#x5B58;&#x5730;&#x5740;)
+                           0x00ff1234+0x8&#xFF1A;0x0018ff11(bottom of thread&apos;s stack)--&gt;0x0018ff11(&#x6808;&#x5E95;)
+</code></pre><h3 id="t3ESP&#x6808;&#x6307;&#x9488;&#x5BC4;&#x5B58;&#x5668;">ESP&#x6808;&#x6307;&#x9488;&#x5BC4;&#x5B58;&#x5668; <a href="#t3ESP&#x6808;&#x6307;&#x9488;&#x5BC4;&#x5B58;&#x5668;"> # </a></h3>
+<blockquote>
+<p>&#x6307;&#x5411;&#x5F53;&#x524D;&#x7A0B;&#x5E8F;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#x5806;&#x6808;&#x7684;&#x5185;&#x5B58;&#x5730;&#x5740;<br>&#x5373;&#x5F53;&#x524D;&#x7A0B;&#x5E8F;&#x4F7F;&#x7528;&#x5806;&#x6808;&#x4F7F;&#x7528;&#x5230;&#x90A3;&#x91CC;&#x4E86;<br>&#x6307;&#x5411;&#x6808;&#x9876;</p>
+</blockquote>
+<h3 id="t4&#x5806;&#x6808;&#x7684;&#x4F7F;&#x7528;push">&#x5806;&#x6808;&#x7684;&#x4F7F;&#x7528;push <a href="#t4&#x5806;&#x6808;&#x7684;&#x4F7F;&#x7528;push"> # </a></h3>
+<p>&#x672C;&#x8D28;</p>
+<blockquote>
+<p>1.&#x5C06;&#x5806;&#x6808;&#x4E2D;&#x538B;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x90A3;&#x4E48;&#x538B;&#x5165;&#x5806;&#x6808;&#x7684;&#x54EA;&#x5462;&#xFF1F;&#x6839;&#x636E;ESP<br>2.&#x4FEE;&#x6539;&#x6808;&#x9876;&#x6307;&#x9488;ESP&#x5BC4;&#x5B58;&#x5668;
+&#x6CE8;&#x610F;&#xFF1A;&#x64CD;&#x4F5C;&#x6570;&#x4E0D;&#x80FD;&#x662F;8&#x4F4D;&#x5BC4;&#x5B58;&#x5668;<br>push imm8/imm16/imm32<br>push r16/r32<br>push m16/m32  </p>
+</blockquote>
+<h3 id="t5pop">pop <a href="#t5pop"> # </a></h3>
+<p>&#x672C;&#x8D28; pop &#x5BB9;&#x5668;</p>
+<blockquote>
+<p>1.&#x5C06;&#x6808;&#x9876;&#x7684;&#x6570;&#x636E;&#x653E;&#x5230;&#x76EE;&#x6807;&#x5904;
+2.&#x4FEE;&#x6539;&#x6808;&#x9876;&#x6307;&#x9488;ESP&#x5BC4;&#x5B58;&#x5668;
+pop r16/r32
+pop m16/m32</p>
+</blockquote>
+<h1 id="t6&#x5C0F;&#x7ED3;">&#x5C0F;&#x7ED3; <a href="#t6&#x5C0F;&#x7ED3;"> # </a></h1>
+<p>&#x4F7F;&#x7528;&#x5185;&#x5B58;push&#xFF0C;&#x91CA;&#x653E;&#x5185;&#x5B58;pop<br>&#x672C;&#x8D28;&#x90FD;&#x662F;&#x5185;&#x5B58;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x540C;&#x65F6;&#x4FEE;&#x6539;&#x4E86;&#x6808;&#x6307;&#x9488;&#x5BC4;&#x5B58;&#x5668;ESP  </p>
+
+    </div>
+
+</div>
+
+
+</body>
+<script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+<script>
+    $('.page-toc li').eq(0).children('a').addClass('red');
+    var arr = [];
+    $("h2,h3").each(function () {
+        $(this).attr('t',$(this).position().top);
+        arr.push($(this).position().top);
+    });
+    $(window).on('scroll', function () {
+        var cur = $(document).scrollTop();
+        for(var i = arr.length; i >=0;i--){
+            if(arr[i]<=cur){
+                break;
+            }
+        }
+        if(i===-1){
+            i = 0;
+        }
+        $('.page-toc li a').removeClass('red');
+        $('.page-toc li').eq(i).children('a').addClass('red')
+    });
+</script>
+</html>
